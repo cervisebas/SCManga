@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ headerLoadingDocument }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openOptions($event)">
+        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar *ngIf="hideProgress == false" color="primary" value="{{ loadImgProgress }}"></ion-progress-bar>
+  <div class="view-images">
+    <img *ngFor="let image of images; index as i" src="{{ image }}" (click)="openImage(image, i)">
+  </div>
+</ion-content>

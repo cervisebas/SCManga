@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openListComplete()">
+        <ion-icon slot="icon-only" name="reader-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" id="FavRefresher">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list id="FavList">
+    
+  </ion-list>
+  <div class="contentClear" *ngIf="isClearVar == true">
+    <div class="iconButton">
+      <ion-icon name="save-outline"></ion-icon>
+      <ion-label>No hay favoritos añadidos</ion-label>
+    </div>
+  </div>
+</ion-content>

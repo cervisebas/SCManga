@@ -1,0 +1,7 @@
+{
+  "name": "SCManga",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

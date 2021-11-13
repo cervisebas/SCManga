@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="favButton">
+        <ion-icon slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="full">
+      <ion-icon slot="start" name="moon"></ion-icon>
+      <ion-label>Modo Oscuro</ion-label>
+      <ion-toggle id="themeToggle" slot="end"></ion-toggle>
+    </ion-item>
+    <ion-item lines="full" button (click)="openViewDownloads()">
+      <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
+      <ion-label>Descargas</ion-label>
+    </ion-item>
+    <ion-item lines="full" button (click)="checkUpdates()">
+      <ion-icon slot="start" name="sync-outline"></ion-icon>
+      <ion-label>Buscar actualizaciones</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

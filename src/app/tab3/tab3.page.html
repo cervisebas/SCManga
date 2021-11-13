@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Directorios</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="filterGender()">
+        <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar animated="true" autocomplete="off" placeholder="Buscar..." (change)="search($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar *ngIf="hideProgress == false" color="primary" type="indeterminate"></ion-progress-bar>
+  <ion-list id="list-search"></ion-list>
+  <div class="contentClear" *ngIf="isClearVar == true">
+    <div class="iconButton">
+      <ion-icon name="file-tray-outline"></ion-icon>
+      <ion-label>No hay resultados</ion-label>
+    </div>
+  </div>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content loadingText="Cargando..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

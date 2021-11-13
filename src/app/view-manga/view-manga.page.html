@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="favButton" (click)="favButton()">
+        <ion-icon slot="icon-only" name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="poster">
+    <div class="ion-activatable ripple-parent">
+      <ion-img [src]="img" (click)="openPoster()" (ionError)="errImagePoster($event)"></ion-img>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+    <ion-segment value="info" id="segment-modal-view" class="segment-modal-view" (ionChange)="changeView($event)">
+      <ion-segment-button value="info">
+        <ion-label>Información</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="chapters">
+        <ion-label>Capítulos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-card>
+
+  <ion-slides id="slideView" class="disabled-swiper-scrollbar" [options]="slideOpts" scrollbar="true" (ionSlideTouchStart)="slideTransition()" (ionSlideWillChange)="changeSlide()">
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Titulo:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ name }}</ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Año de publicación:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ age }}</ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Tipo:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ type }}</ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Géneros:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip *ngFor="let gender of genders;">
+            <ion-label>{{ gender.name }}</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Sinopsis:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ synopsis }}</ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-item *ngFor="let chapter of chapters;">
+          <ion-label>{{ chapter.name }}</ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="primary" (click)="openChapter(chapter.servers, chapter.name)">
+              <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="primary" (click)="downloadChapter(chapter.servers, chapter.name)">
+              <ion-icon slot="icon-only" name="download-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Descargas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="downloads-progress-page">
+  <ion-list></ion-list>
+  <div class="contentClear" *ngIf="isClearVar == true">
+    <div class="iconButton">
+      <ion-icon name="cloud-download-outline"></ion-icon>
+      <ion-label>No hay descargas en curso</ion-label>
+    </div>
+  </div>
+</ion-content>

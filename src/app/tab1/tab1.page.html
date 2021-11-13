@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recientes</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="uploads" (ionChange)="changeView($event)">
+      <ion-segment-button value="uploads">
+        <ion-label>Últimas subidas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="adds">
+        <ion-label>Últimos añadidos</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" id="HomeRefresher">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-slides [options]="slideOpts" id="list-recents" scrollbar="true" (ionSlideTouchStart)="slideTransition()" (ionSlideWillChange)="changeSlide()">
+    <ion-slide class="uploads">
+      <ion-list>
+        <ion-item *ngFor="let item of [].constructor(29);">
+          <ion-thumbnail slot="start" style="width: 110px; height: 150px;">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h2><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h2>
+            <p><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+            <p><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+    <ion-slide class="adds">
+      <ion-list>
+        <ion-item *ngFor="let item of [].constructor(11);">
+          <ion-thumbnail slot="start" style="width: 110px; height: 150px;">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h2><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></h2>
+            <p><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,80 @@
+npm install cordova-plugin-advanced-http
+npm install @ionic-native/http
+
+npm install cordova-plugin-inappbrowser
+npm install @ionic-native/in-app-browser
+
+npm install cordova-plugin-fullscreen
+npm install @ionic-native/android-full-screen
+
+npm install cordova-plugin-android-permissions
+npm install @ionic-native/android-permissions
+
+npm install cordova-plugin-app-version
+npm install @ionic-native/app-version
+
+npm install cordova-plugin-background-mode
+npm install @ionic-native/background-mode
+
+npm install cordova.plugins.diagnostic
+npm install @ionic-native/diagnostic
+
+npm install cordova-plugin-file-transfer
+npm install @ionic-native/file-transfer
+
+npm install cordova-plugin-file
+npm install @ionic-native/file
+
+npm install cordova-plugin-screen-orientation
+npm install @ionic-native/screen-orientation
+
+npm install --save cordova-plugin-navigationbar-color
+npm install --save ionic-navigationbar-color
+
+npm install cordova-plugin-device
+npm install @ionic-native/device
+npm install es6-promise-plugin
+
+npm install cordova-pdf-generator
+npm install @ionic-native/pdf-generator
+
+npm install com-sarriaroman-photoviewer
+npm install @ionic-native/photo-viewer
+
+npm install es.keensoft.fullscreenimage
+npm install @ionic-native/full-screen-image
+
+npm install cordova-plugin-headercolor
+npm install @ionic-native/header-color
+
+npm install cordova-plugin-insomnia
+npm install @ionic-native/insomnia
+
+npm install cordova-plugin-local-notification
+npm install @ionic-native/local-notifications
+
+npm install @capacitor/filesystem
+npm install @capacitor/network
+npm install @capacitor/browser
+npm install @capacitor/push-notifications
+npm install @capacitor/toast
+npm install @capacitor/local-notifications
+
+npm install cordova-plugin-screen-orientation
+npm install @ionic-native/screen-orientation
+
+npm i @fortawesome/angular-fontawesome
+npm i @fortawesome/fontawesome-svg-core
+npm i @fortawesome/free-solid-svg-icons
+npm i @fortawesome/free-regular-svg-icons
+npm i @fortawesome/free-brands-svg-icons
+
+ionic cap sync
+
+npm install --save-dev jetifier
+
+npx jetify -r
+
+ionic cap sync
+
+ionic capacitor run android -l --external

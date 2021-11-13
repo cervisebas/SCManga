@@ -1,0 +1,14 @@
+ion-content {
+    --background: transparent;
+    ion-slides {
+        height: 100%;
+    }
+    ion-row {
+        z-index: 1000;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+}

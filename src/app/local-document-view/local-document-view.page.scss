@@ -1,0 +1,29 @@
+ion-content {
+	div.view-images {
+		width: 100%;
+		height: auto;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		--background: var(--ion-toolbar-background, var(--ion-background-color, #fff));
+		ion-img {
+			border: 2px solid var(--color);
+			width: calc(100% - 10px);
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+		img {
+			border: 2px solid var(--color);
+			width: calc(100% - 10px);
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-top: 5px;
+		}
+	}
+	ion-progress-bar {
+	    position: fixed;
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	}
+}
